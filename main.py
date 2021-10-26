@@ -13,7 +13,7 @@ discount_codes = [
 api = Flask(__name__)
 
 
-@api.route('/discount/post', methods=['POST'])
+@api.route('/discount', methods=['POST'])
 def post_discount():
     if request.args.get('product_id') is None:
         flask.abort(400)
@@ -24,7 +24,7 @@ def post_discount():
     return discount_code
 
 
-@api.route('/discount/get', methods=['GET'])
+@api.route('/discount', methods=['GET'])
 def get_discount():
     if request.args.get('product_id') is None:
         return flask.abort(400)
