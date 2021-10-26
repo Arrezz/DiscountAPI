@@ -1,6 +1,6 @@
-#Discount Service
+# Discount Service
 
-##Installation instructions
+## Installation instructions
 
 Install Python for your OS (https://www.python.org/downloads/release/python-397/).
 
@@ -15,13 +15,13 @@ Run the following command `python main.py`
 
 You can now access the API locally at `http://127.0.0.1:5000/`
 
-##Discount API documentation
+## Discount API documentation
 
-###Endpoints
+### Endpoints
 
 The following two endpoints are used to create and get the discount codes.
 
-####Create discount
+#### Create discount
 * Create discount code: `POST /discount:product_id`
   
 Possible responses for the POST are:
@@ -29,7 +29,7 @@ Possible responses for the POST are:
 * The UUID of the discount code that was created.
 
 
-####Get discount
+#### Get discount
 * Get discount : `GET /discount:product_id`
 
 Possible responses for the GET are:
