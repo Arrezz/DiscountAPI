@@ -8,7 +8,7 @@ discount_codes = {'5739c588-2943-4748-a8d4-a7346f94a420': {'85219126-6d32-4ccc-b
 api = Flask(__name__)
 
 
-@api.route('/discount/post', methods=['GET'])
+@api.route('/discount', methods=['POST'])
 def post_discount():
     if request.args.get('product_id') is None:
         flask.abort(400)
@@ -21,13 +21,12 @@ def post_discount():
     return discount_code
 
 
-@api.route('/discount/get', methods=['GET'])
+@api.route('/discount', methods=['GET'])
 def get_discount():
     if request.args.get('product_id') is None:
         return flask.abort(400)
     product_id = request.args.get('product_id')
-    for _ in discount_codes.keys():
-        return discount_codes[product_id].pop()
+    return discount_codes[product_id].pop()
     return flask.abort(404)
 
 
