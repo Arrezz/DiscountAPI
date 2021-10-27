@@ -26,8 +26,13 @@ def get_discount():
     if request.args.get('product_id') is None:
         return flask.abort(400)
     product_id = request.args.get('product_id')
-    return discount_codes[product_id].pop()
-    return flask.abort(404)
+    discount_code = discount_codes[product_id].pop()
+    if discount_code is None:
+        return flask.abort(404)
+    else:
+        return discount_code
+
+
 
 
 if __name__ == '__main__':
